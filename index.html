@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quixo Marketing Studio | Luxury Digital Agency</title>
+    <script>
+        if (localStorage.getItem('quixo_theme') === 'light') {
+            document.write('<style>#intro-splash { background-color: #F9F6EE !important; }</style>');
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quixo Marketing Studio | Luxury Digital Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -721,6 +728,69 @@ body.light-mode #toast-container div span {
 
 
 
+
+<style>
+/* Elite Light Mode Luxury Enhancements */
+body.light-mode {
+    background: linear-gradient(135deg, #FDFCF9 0%, #F5F1E9 50%, #ECE6D9 100%) !important;
+    color: #111827 !important;
+}
+body.light-mode .glass-card,
+body.light-mode #pricing .bg-\[\#0C0C0C\] {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body.light-mode .glass-card:hover {
+    border-color: rgba(197, 160, 89, 0.9) !important;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(197, 160, 89, 0.3) !important;
+}
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4 {
+    color: #0F172A !important;
+}
+body.light-mode p, body.light-mode span {
+    color: inherit;
+}
+body.light-mode .text-gray-300, body.light-mode .text-gray-400 {
+    color: #334155 !important;
+}
+body.light-mode section {
+    position: relative;
+}
+body.light-mode section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
+}
+</style>
+
+
+<style>
+/* Elite Calculator Typography Enhancements */
+#calculator input[type="range"] {
+    accent-color: #C5A059;
+}
+#calculator .glass-card, #calculator .bg-\[\#0C0C0C\] {
+    box-shadow: 0 25px 50px rgba(197, 160, 89, 0.2);
+}
+#calc-orders, #calc-revenue, #calc-profit {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+body.light-mode #calc-orders, 
+body.light-mode #calc-revenue, 
+body.light-mode #calc-profit {
+    color: #0F172A !important;
+}
+</style>
+
 </head>
 <body class="bg-black text-white antialiased selection:bg-[#C5A059] selection:text-black">
 
@@ -812,6 +882,11 @@ body.light-mode #toast-container div span {
             if (splash) {
                 splash.style.opacity = '0';
                 splash.style.pointerEvents = 'none';
+                const mainC = document.getElementById('main-content');
+                if (mainC) {
+                    mainC.style.opacity = '1';
+                    mainC.style.pointerEvents = 'auto';
+                }
                 setTimeout(() => splash.remove(), 1000);
             }
         }, 2800);
@@ -831,7 +906,10 @@ body.light-mode #toast-container div span {
     
 
 
-    <!-- Navbar -->
+    
+    <!-- Main Content Wrapper (Hidden during splash screen, fades in after splash completes) -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000 ease-in-out pointer-events-none">
+<!-- Navbar -->
     
     
     
@@ -1795,5 +1873,7 @@ function submitAudit() {
     });
     </script>
 
+
+    </div>
 </body>
 </html>
