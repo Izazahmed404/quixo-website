@@ -1177,6 +1177,120 @@ body.light-mode #calc-profit {
 
 
     
+    
+    
+    <!-- Quixo Live & Viral Media Hub (Elite Premium Redesign) -->
+    <section id="media-hub" class="py-24 max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-xs uppercase tracking-[0.3em] font-extrabold px-4 py-1.5 rounded-full border border-[#C5A059]/50 bg-[#C5A059]/15 gold-lighting-text shadow-[0_0_20px_rgba(197,160,89,0.3)]">
+                VIRAL SHOWCASE & ARCHIVE
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black font-serif tracking-tight gold-lighting-text drop-shadow-lg">
+                আমাদের ভাইরাল ক্যাম্পেইন ও রিলস গ্যালারি
+            </h2>
+            <p class="text-gray-300 dark:text-gray-300 light:text-slate-700 text-base sm:text-lg font-medium">
+                ফেসবুকের টপ-পার্ফর্মিং ভাইরাল পোস্ট এবং ব্র্যান্ড প্রমোশনাল রিলস সরাসরি এক নজরে।
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- 1. Promotional Brand Video (Elite Vertical Reel Frame) -->
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-8 lg:col-span-4 shadow-[0_30px_70px_rgba(0,0,0,0.8)] border-2 border-[#C5A059]/40 relative overflow-hidden group hover:border-[#C5A059] transition-all duration-500">
+                <div class="absolute -right-20 -top-20 w-48 h-48 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#C5A059]/30 to-[#9A7B38]/30 border border-[#C5A059]/50 flex items-center justify-center text-xl shadow-inner">🎬</div>
+                        <div>
+                            <h3 class="text-xl font-bold font-serif gold-lighting-text">এক্সক্লুসিভ রিলস</h3>
+                            <p class="text-xs text-gray-400">ট্রেন্ডিং অ্যাডভার্টাইজিং রিল</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="relative rounded-2xl overflow-hidden border-2 border-[#C5A059]/50 bg-black aspect-[9/16] shadow-[0_15px_40px_rgba(197,160,89,0.3)] group cursor-pointer">
+                    <!-- Video Player (Clicking opens FB reel link) -->
+                    <video id="quixo-reel-video" autoplay muted loop playsinline class="w-full h-full object-cover" onclick="window.open('https://www.facebook.com/share/r/1HaYUAcvdR/', '_blank')">
+                        <source src="reel_video.mp4" type="video/mp4">
+                        আপনার ব্রাউজার ভিডিও ট্যাগ সমর্থন করে না।
+                    </video>
+
+                    <!-- Mute / Unmute Button (No play/pause) -->
+                    <button id="mute-toggle-btn" onclick="event.stopPropagation(); toggleMute();" class="absolute bottom-4 right-4 z-20 bg-black/70 hover:bg-black text-[#C5A059] border border-[#C5A059]/60 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transition-all flex items-center gap-1.5">
+                        <span id="mute-icon">🔇</span> <span id="mute-text">Sound Off</span>
+                    </button>
+
+                    <!-- Click hint overlay on hover -->
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <span class="bg-black/80 text-[#FFF0B3] text-xs font-bold px-4 py-2 rounded-xl border border-[#C5A059]/60 shadow-2xl flex items-center gap-2">
+                            <span>🔗 Facebook এ দেখতে ক্লিক করুন</span>
+                        </span>
+                    </div>
+
+                    <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                        <span class="text-xs text-[#FFF0B3] font-bold bg-black/70 px-3 py-1 rounded-full border border-[#C5A059]/40 backdrop-blur-md">Quixo Viral Reel</span>
+                    </div>
+                </div>
+
+                <script>
+                function toggleMute() {
+                    const video = document.getElementById('quixo-reel-video');
+                    const icon = document.getElementById('mute-icon');
+                    const text = document.getElementById('mute-text');
+                    if (video.muted) {
+                        video.muted = false;
+                        icon.innerText = '🔊';
+                        text.innerText = 'Sound On';
+                    } else {
+                        video.muted = true;
+                        icon.innerText = '🔇';
+                        text.innerText = 'Sound Off';
+                    }
+                }
+                </script>
+
+            </div>
+            </div>
+
+            <!-- 2. Top Ranking Posts & Viral Showcase (Elite Grid) -->
+            <div class="lg:col-span-8">
+                <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.8)] border-2 border-[#C5A059]/40 relative overflow-hidden">
+                    <div class="absolute -left-20 -bottom-20 w-48 h-48 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4 border-b border-[#C5A059]/20 pb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#C5A059]/30 to-[#9A7B38]/30 border border-[#C5A059]/50 flex items-center justify-center text-xl shadow-inner">🔥</div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-serif gold-lighting-text">টপ র‍্যাঙ্কিং ভাইরাল পোস্টসমূহ</h3>
+                                <p class="text-xs text-gray-400">অফিসিয়াল ফেসবুক পেজের ভেরিফাইড পোস্ট</p>
+                            </div>
+                        </div>
+                        <a href="https://www.facebook.com/QuixoStudio" target="_blank" class="text-xs bg-[#C5A059]/20 hover:bg-[#C5A059] text-[#C5A059] hover:text-black font-bold px-4 py-2 rounded-xl border border-[#C5A059]/50 transition-all duration-300 flex items-center gap-2">
+                            <span>পেজ ভিজিট করুন</span> ➔
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- FB Post 1 -->
+                        <div class="bg-black/60 dark:bg-black/60 light:bg-white/90 rounded-2xl p-4 border border-[#C5A059]/30 hover:border-[#C5A059] shadow-xl transition-all duration-300 flex justify-center overflow-hidden">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FQuixoStudio%2Fposts%2Fpfbid0hmpxi6cjiFXgyQg55Ke4bg9fZZFNyc3xrVc3T5Gcd7Y7KuJBLtmX2wobPLDLaffKl&show_text=true&width=500" width="100%" height="520" style="border:none;overflow:hidden;border-radius:12px;background:transparent;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+
+                        <!-- FB Post 2 -->
+                        <div class="bg-black/60 dark:bg-black/60 light:bg-white/90 rounded-2xl p-4 border border-[#C5A059]/30 hover:border-[#C5A059] shadow-xl transition-all duration-300 flex justify-center overflow-hidden">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FQuixoStudio%2Fposts%2Fpfbid0qsyf7pPcBSEM6K59tki4NbQTr96o1VwQFGMz9TUtXWQ1QdBfzMDew4pyohNUXbrbl&show_text=true&width=500" width="100%" height="520" style="border:none;overflow:hidden;border-radius:12px;background:transparent;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
     <!-- Pricing / Packages Section -->
     <section id="pricing" class="py-32 px-6 border-t border-[#C5A059]/25">
         <div class="max-w-7xl mx-auto">
