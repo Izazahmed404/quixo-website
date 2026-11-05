@@ -30,7 +30,7 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        .gold-gradient-text {
+        .gold-lighting-text {
             background: linear-gradient(135deg, #FFF0B3 0%, #E2C275 30%, #C5A059 70%, #9A7B38 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -103,6 +103,29 @@
 }
 </style>
 
+
+<style>
+@keyframes goldAuraBlink {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4)); box-shadow: 0 0 10px rgba(197, 160, 89, 0.3); }
+    50% { filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.9)); box-shadow: 0 0 25px rgba(197, 160, 89, 0.7); }
+}
+.gold-aura-blink {
+    animation: goldAuraBlink 3s ease-in-out infinite;
+}
+@keyframes goldLighting {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.gold-lighting-text {
+    background: linear-gradient(270deg, #C5A059, #FFF3D6, #C5A059, #E2C275);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldLighting 4s ease infinite;
+}
+</style>
+
 </head>
 <body class="bg-black text-white antialiased selection:bg-[#C5A059] selection:text-black">
 
@@ -114,7 +137,7 @@
             <h2 class="text-base sm:text-lg uppercase tracking-[0.35em] text-gold font-black drop-shadow-md">
                 WELCOME TO
             </h2>
-            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black gold-gradient-text tracking-[0.1em] uppercase font-serif drop-shadow-2xl">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black gold-lighting-text tracking-[0.1em] uppercase font-serif drop-shadow-2xl">
                 Quixo Marketing Studio
             </h1>
             <div class="w-40 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-6 animate-pulse"></div>
@@ -222,7 +245,7 @@
                     <span class="text-[#C5A059] font-extrabold text-2xl hidden">Q</span>
                 </div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-tight gold-gradient-text">QUIXO</span>
+                    <span class="text-xl font-extrabold tracking-tight gold-lighting-text">QUIXO</span>
                     <span class="block text-[10px] tracking-widest uppercase text-gray-400 font-semibold">Marketing Studio</span>
                 </div>
             </div>
@@ -256,7 +279,7 @@
                 </div>
                 
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
-                    Smart Marketing. <br><span class="gold-gradient-text animate-pulse">Bigger Growth.</span>
+                    Smart Marketing. <br><span class="gold-lighting-text animate-pulse">Bigger Growth.</span>
                 </h1>
                 
                 <p class="text-gray-300 text-lg sm:text-xl font-medium max-w-2xl leading-relaxed">
@@ -275,15 +298,15 @@
                 <!-- Trust Badges -->
                 <div class="grid grid-cols-3 gap-6 pt-8 border-t border-[#C5A059]/20">
                     <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-gradient-text">3.8x</h4>
+                        <h4 class="text-2xl font-black gold-lighting-text">3.8x</h4>
                         <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">Average ROAS</p>
                     </div>
                     <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-gradient-text">60+</h4>
+                        <h4 class="text-2xl font-black gold-lighting-text">60+</h4>
                         <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">Monthly Creatives</p>
                     </div>
                     <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-gradient-text">24/7</h4>
+                        <h4 class="text-2xl font-black gold-lighting-text">24/7</h4>
                         <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">AI Automation</p>
                     </div>
                 </div>
@@ -344,7 +367,7 @@
     <section id="services" class="py-28 px-6 border-t border-[#C5A059]/20 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Our Elite <span class="gold-gradient-text">Capabilities</span></h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Our Elite <span class="gold-lighting-text">Capabilities</span></h2>
                 <p class="text-gray-400 max-w-xl mx-auto">Comprehensive digital solutions engineered for explosive growth.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -379,7 +402,7 @@
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <span class="px-5 py-2 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-widest border border-gold/30">লাভ ও প্রফিট ক্যালকুলেটর</span>
-                <h2 class="text-4xl md:text-6xl font-black mt-4 mb-4">আপনার সম্ভাব্য <span class="gold-gradient-text">নেট লাভ হিসাব করুন</span></h2>
+                <h2 class="text-4xl md:text-6xl font-black mt-4 mb-4">আপনার সম্ভাব্য <span class="gold-lighting-text">নেট লাভ হিসাব করুন</span></h2>
                 <p class="text-gray-400 max-w-xl mx-auto text-base">আপনার প্রোডাক্টের দাম ও খরচ দিয়ে প্রতি মাসের আনুমানিক লাভ সহজে জেনে নিন।</p>
             </div>
             <div class="luxury-card p-8 md:p-14 rounded-3xl border-2 border-[#C5A059]/50 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-2xl">
@@ -417,7 +440,7 @@
                     </div>
                     <div>
                         <p class="text-xs text-gray-400 uppercase tracking-wider font-bold">Projected Net Profit</p>
-                        <p id="res-profit" class="text-4xl md:text-5xl font-black gold-gradient-text mt-2">৳1,32,500</p>
+                        <p id="res-profit" class="text-4xl md:text-5xl font-black gold-lighting-text mt-2">৳1,32,500</p>
                     </div>
                     <a href="#pricing" class="block w-full py-4 rounded-2xl gold-gradient-bg text-black font-black text-base shadow-2xl shadow-gold/40 hover:scale-105 transition-all">Scale With Quixo Now</a>
                 </div>
@@ -425,21 +448,30 @@
         </div>
     </section>
 
+    
     <script>
     function calculateROI() {
         const price = parseFloat(document.getElementById('calc-price').value) || 0;
         const cost = parseFloat(document.getElementById('calc-cost').value) || 0;
+        const delivery = parseFloat(document.getElementById('calc-delivery').value) || 0;
         const budget = parseFloat(document.getElementById('calc-budget').value) || 0;
-        const estimatedOrders = Math.round((budget / 350) * 2.8);
+        
+        // Accurate e-commerce formula: estimated orders based on ad budget (~350 BDT cost per order acquisition)
+        const estimatedOrders = Math.round((budget / 350) * 2.5);
         const grossRevenue = estimatedOrders * price;
-        const totalCost = budget + (estimatedOrders * cost);
+        const totalCost = budget + (estimatedOrders * (cost + delivery));
         const netProfit = grossRevenue - totalCost;
         const roas = budget > 0 ? (grossRevenue / budget).toFixed(1) : 0;
         
+        document.getElementById('res-orders').innerText = estimatedOrders.toLocaleString('en-IN') + ' Orders';
+        document.getElementById('res-revenue').innerText = '৳' + grossRevenue.toLocaleString('en-IN');
         document.getElementById('res-profit').innerText = '৳' + netProfit.toLocaleString('en-IN');
         document.getElementById('res-roas').innerText = roas + 'x';
     }
+    // Run on load
+    window.addEventListener('DOMContentLoaded', calculateROI);
     </script>
+
 
     <!-- Pricing / Packages Section -->
     <section id="pricing" class="py-32 px-6 border-t border-[#C5A059]/25">
@@ -447,7 +479,7 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
                 <div>
                     <span class="px-5 py-2 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-widest border border-gold/30">সুলভ ও সাশ্রয়ী প্যাকেজ (Affordable Growth)</span>
-                    <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-2">ছোট-বড় সব ব্যবসার জন্য <span class="gold-gradient-text">সহজ ইনভেস্টমেন্ট</span></h2>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-2">ছোট-বড় সব ব্যবসার জন্য <span class="gold-lighting-text">সহজ ইনভেস্টমেন্ট</span></h2>
                 </div>
                 <p class="text-gray-400 max-w-md text-sm md:text-base mt-4 md:mt-0">বাজেট যতই হোক না কেন, প্রতিটি ই-কমার্স উদ্যোক্তা যেন প্রিমিয়াম সার্ভিস নিতে পারেন—মাত্র ৳৩,৫০০ থেকে শুরু!</p>
             </div>
@@ -531,7 +563,7 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between">
                 <div>
                     <span class="px-5 py-2 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-widest border border-gold/30">ক্লায়েন্টদের সফলতা (Success Stories)</span>
-                    <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-2">আমাদের নিয়ে উদ্যোক্তাদের <span class="gold-gradient-text">মতামত</span></h2>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-2">আমাদের নিয়ে উদ্যোক্তাদের <span class="gold-lighting-text">মতামত</span></h2>
                 </div>
                 <p class="text-gray-400 max-w-md text-sm md:text-base mt-4 md:mt-0">বাংলাদেশের সফল ই-কমার্স ও এফ-কমার্স উদ্যোক্তারা কী বলছেন Quixo Marketing Studio সম্পর্কে।</p>
             </div>
@@ -626,29 +658,14 @@
     <!-- Footer -->
     <footer class="bg-black border-t border-[#C5A059]/30 py-20 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
+            
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 rounded-2xl bg-black border border-[#C5A059]/50 flex items-center justify-center overflow-hidden">
-                        <img src="C:/Users/IRFAN_PC/Downloads/Quixo Studio Gold Emblem.png" alt="Logo" class="w-full h-full object-cover">
+                    <div class="w-12 h-12 rounded-2xl bg-black border border-[#C5A059]/50 flex items-center justify-center overflow-hidden gold-aura-blink">
+                        <img src="https://i.ibb.co/5W2mX2R/Quixo-Studio-Gold-Emblem.png" alt="Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="text-xl font-extrabold gold-gradient-text">Quixo Marketing Studio</span>
+                    <span class="text-xl font-extrabold gold-lighting-text">Quixo Marketing Studio</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">বাংলাদেশের ই-কমার্স উদ্যোক্তাদের সেলস ও ব্র্যান্ড গ্রোথ নিশ্চিত করতে বিশ্বমানের মার্কেটিং ও অ্যাডস সলিউশন।</p>
-            </div>
-            <div>
-                <h4 class="font-extrabold text-white mb-6 text-base tracking-wider uppercase">Official Contact</h4>
-                <div class="space-y-4">
-                    <a href="https://wa.me/8801895681235" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-[#0a0a0a] border border-[#C5A059]/40 hover:border-[#C5A059] transition-all group">
-                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">WhatsApp / Hotline</p>
-                            <p class="text-white font-extrabold text-sm">01895681235</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+
             <div>
                 <h4 class="font-extrabold text-white mb-6 text-base tracking-wider uppercase">Social Media</h4>
                 <a href="https://www.facebook.com/QuixoStudio" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-[#0a0a0a] border border-[#C5A059]/40 hover:border-[#C5A059] transition-all group">
