@@ -2,6 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quixo Marketing Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -93,18 +94,18 @@
                 </div>
 
 <!-- Trust Badges -->
-                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-[#C5A059]/20">
-                    <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-lighting-text">3.8x</h4>
-                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">গড় আরওএএস (ROAS)</p>
+                <div class="hero-trust-grid grid grid-cols-3 gap-6 pt-8 border-t border-[#C5A059]/20">
+                    <div class="hero-trust-card glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
+                        <h4 class="hero-trust-value text-2xl font-black gold-lighting-text">3.8x</h4>
+                        <p class="hero-trust-copy text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">গড় আরওএএস (ROAS)</p>
                     </div>
-                    <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-lighting-text">60+</h4>
-                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">প্রতি মাসের ক্রিয়েটিভ</p>
+                    <div class="hero-trust-card glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
+                        <h4 class="hero-trust-value text-2xl font-black gold-lighting-text">60+</h4>
+                        <p class="hero-trust-copy text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">প্রতি মাসের ক্রিয়েটিভ</p>
                     </div>
-                    <div class="glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
-                        <h4 class="text-2xl font-black gold-lighting-text">24/7</h4>
-                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">এআই অটোমেশন</p>
+                    <div class="hero-trust-card glass-card p-4 rounded-2xl border border-gold/20 hover-lift">
+                        <h4 class="hero-trust-value text-2xl font-black gold-lighting-text">24/7</h4>
+                        <p class="hero-trust-copy text-xs text-gray-400 font-bold uppercase tracking-wider mt-1">এআই অটোমেশন</p>
                     </div>
                 </div>
             </div>
@@ -262,10 +263,10 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="media-hub-grid grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             <!-- 1. Promotional Brand Video (Elite Vertical Reel Frame) -->
-            <div class="glass-card rounded-[2.5rem] p-6 sm:p-8 lg:col-span-4 shadow-[0_30px_70px_rgba(0,0,0,0.8)] border-2 border-[#C5A059]/40 relative overflow-hidden group hover:border-[#C5A059] transition-all duration-500">
+            <div class="media-reel-card glass-card rounded-[2.5rem] p-6 sm:p-8 lg:col-span-4 shadow-[0_30px_70px_rgba(0,0,0,0.8)] border-2 border-[#C5A059]/40 relative overflow-hidden group hover:border-[#C5A059] transition-all duration-500">
                 <div class="absolute -right-20 -top-20 w-48 h-48 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="space-y-3 mb-6">
@@ -278,42 +279,32 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden border-2 border-[#C5A059]/50 bg-black aspect-[9/16] shadow-[0_15px_40px_rgba(197,160,89,0.3)] group cursor-pointer">
-                    <!-- Video Player (Clicking opens FB reel link) -->
-                    <video id="quixo-reel-video" autoplay muted loop playsinline class="w-full h-full object-cover" onclick="window.open('https://www.facebook.com/share/r/1HaYUAcvdR/', '_blank')">
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-and-numbers-31952-large.mp4" type="video/mp4">
-                        আপনার ব্রাউজার ভিডিও ট্যাগ সমর্থন করে না।
-                    </video>
-
-                    <!-- Mute / Unmute Button (No play/pause) -->
-                    <button id="mute-toggle-btn" onclick="event.stopPropagation(); toggleMute();" class="absolute bottom-4 right-4 z-20 bg-black/70 hover:bg-black text-[#C5A059] border border-[#C5A059]/60 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transition-all flex items-center gap-1.5">
-                        <span id="mute-icon">🔇</span> <span id="mute-text">Sound Off</span>
-                    </button>
-
-                    <!-- Click hint overlay on hover -->
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                        <span class="bg-black/80 text-[#FFF0B3] text-xs font-bold px-4 py-2 rounded-xl border border-[#C5A059]/60 shadow-2xl flex items-center gap-2">
-                            <span>🔗 Facebook এ দেখতে ক্লিক করুন</span>
-                        </span>
-                    </div>
-
-                    <div class="absolute top-4 left-4 z-10 pointer-events-none">
-                        <span class="text-xs text-[#FFF0B3] font-bold bg-black/70 px-3 py-1 rounded-full border border-[#C5A059]/40 backdrop-blur-md">Quixo Viral Reel</span>
-                    </div>
+                <div class="media-reel-frame relative mx-auto aspect-[9/16] w-full max-w-sm rounded-2xl overflow-hidden border-2 border-[#C5A059]/50 bg-black shadow-[0_15px_40px_rgba(197,160,89,0.3)]">
+                    <iframe
+                        title="Quixo Marketing Studio Facebook Reel"
+                        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1762986784782309%2F&show_text=false&width=720"
+                        class="absolute inset-0 h-full w-full border-0"
+                        loading="lazy"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <a href="https://www.facebook.com/reel/1762986784782309/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-[#C5A059]/50 px-4 py-2 text-sm font-bold text-gold transition-colors hover:bg-[#C5A059]/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A059]">
+                    ফেসবুকে রিলটি দেখুন
+                </a>
 
             </div>
 
             <!-- 2. Top Ranking Posts & Viral Showcase (Elite Grid) -->
-            <div class="lg:col-span-8">
+            <div class="media-posts-column min-w-0 lg:col-span-8">
                 <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.8)] border-2 border-[#C5A059]/40 relative overflow-hidden">
                     <div class="absolute -left-20 -bottom-20 w-48 h-48 bg-[#C5A059]/15 rounded-full blur-3xl pointer-events-none"></div>
                     
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4 border-b border-[#C5A059]/20 pb-6">
-                        <div class="flex items-center gap-3">
+                        <div class="flex min-w-0 items-center gap-3">
                             <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#C5A059]/30 to-[#9A7B38]/30 border border-[#C5A059]/50 flex items-center justify-center text-xl shadow-inner">🔥</div>
-                            <div>
-                                <h3 class="text-2xl font-bold font-serif gold-lighting-text">টপ র‍্যাঙ্কিং ভাইরাল পোস্টসমূহ</h3>
+                            <div class="min-w-0">
+                                <h3 class="media-post-heading text-2xl font-bold font-serif gold-lighting-text">টপ র‍্যাঙ্কিং ভাইরাল পোস্টসমূহ</h3>
                                 <p class="text-xs text-gray-400">অফিসিয়াল ফেসবুক পেজের ভেরিফাইড পোস্ট</p>
                             </div>
                         </div>
@@ -380,7 +371,7 @@
                             <li class="flex items-center gap-3">✓ Dedicated Growth Strategist</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/8801895681235?text=I%20want%20to%20order%20Standard%20Package%20(6,000%20BDT)" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl gold-gradient-bg text-black font-extrabold text-center transition-all shadow-xl shadow-gold/30">Order via WhatsApp</a>
+                    <a href="https://wa.me/8801895681235?text=I%20want%20to%20order%20Standard%20Package%20(6,000%20BDT)" target="_blank" rel="noopener noreferrer" class="standard-growth-order w-full py-4 rounded-2xl gold-gradient-bg text-black font-extrabold text-center transition-all shadow-xl shadow-gold/30">Order via WhatsApp</a>
                 </div>
 
                 <!-- Premium Domination -->

@@ -168,25 +168,6 @@ function calculateROI() {
     }
     window.addEventListener('DOMContentLoaded', calculateROI);
 
-function toggleMute() {
-                    const video = document.getElementById('quixo-reel-video');
-                    const icon = document.getElementById('mute-icon');
-                    const text = document.getElementById('mute-text');
-                    if (!video || !icon || !text) {
-                        console.error('Video mute controls are unavailable because a required element is missing.');
-                        return;
-                    }
-                    if (video.muted) {
-                        video.muted = false;
-                        icon.innerText = '🔊';
-                        text.innerText = 'Sound On';
-                    } else {
-                        video.muted = true;
-                        icon.innerText = '🔇';
-                        text.innerText = 'Sound Off';
-                    }
-                }
-
 function openAuditModal() {
     const modal = document.getElementById('audit-modal');
     if (modal) modal.classList.remove('hidden');
@@ -297,10 +278,17 @@ function toggleTheme() {
         }
 
         if (typeof document.startViewTransition === 'function') {
-            const bounds = btn.getBoundingClientRect();
-            document.documentElement.style.setProperty('--theme-origin-x', `${bounds.left + bounds.width / 2}px`);
-            document.documentElement.style.setProperty('--theme-origin-y', `${bounds.top + bounds.height / 2}px`);
-            document.startViewTransition(applyTheme);
+            document.startViewTransition(() => {
+                const bounds = btn.getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const originX = ((bounds.left + bounds.width / 2) / viewportWidth) * 100;
+                const originY = ((bounds.top + bounds.height / 2) / viewportHeight) * 100;
+
+                document.documentElement.style.setProperty('--theme-origin-x', `${originX}%`);
+                document.documentElement.style.setProperty('--theme-origin-y', `${originY}%`);
+                applyTheme();
+            });
             return;
         }
 

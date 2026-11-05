@@ -353,11 +353,11 @@ body.light-mode #toast-container div span {
 
 @keyframes theme-glass-reveal {
     from {
-        clip-path: circle(0 at var(--theme-origin-x, 50vw) var(--theme-origin-y, 50vh));
+        clip-path: circle(0 at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
         filter: blur(12px) saturate(1.25);
     }
     to {
-        clip-path: circle(180vmax at var(--theme-origin-x, 50vw) var(--theme-origin-y, 50vh));
+        clip-path: circle(180vmax at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
         filter: blur(0) saturate(1);
     }
 }
@@ -835,6 +835,10 @@ body.light-mode div.border-2.border-gold {
     box-shadow: 0 20px 50px rgba(197, 160, 89, 0.22) !important;
 }
 
+body.light-mode #pricing .standard-growth-order {
+    background: linear-gradient(135deg, #E2C275 0%, #C5A059 50%, #9A7B38 100%) !important;
+}
+
 /* Headings with Rich Onyx Depth */
 body.light-mode h1, 
 body.light-mode h2, 
@@ -1114,15 +1118,33 @@ body.light-mode section::after {
     box-shadow: 0 25px 50px rgba(197, 160, 89, 0.2);
 }
 #res-orders, #res-revenue, #res-profit, #res-roas {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
     letter-spacing: -0.02em;
     font-weight: 800;
 }
-body.light-mode #res-orders,
-body.light-mode #res-revenue,
-body.light-mode #res-profit,
-body.light-mode #res-roas {
-    color: #0F172A !important;
+
+body.light-mode #calculator h2 {
+    text-shadow: none;
+}
+
+body.light-mode #calculator > div > div.text-center > p {
+    font-weight: 400 !important;
+}
+
+body.light-mode #calculator label {
+    font-weight: 900 !important;
+}
+
+body.light-mode #calculator .text-gray-400.font-bold {
+    font-weight: 700 !important;
+}
+
+body.light-mode #calculator #res-orders,
+body.light-mode #calculator #res-revenue,
+body.light-mode #calculator #res-profit,
+body.light-mode #calculator #res-roas {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
+    font-weight: 800 !important;
 }
 
 body:not(.light-mode) .text-gray-500 {
@@ -1151,6 +1173,64 @@ body:not(.light-mode) .text-gray-500 {
 .testimonial-card {
     width: min(90vw, 380px);
     flex: 0 0 min(90vw, 380px);
+}
+
+.hero-trust-card {
+    min-width: 0;
+    text-align: center;
+}
+
+.hero-trust-value {
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.hero-trust-copy {
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+#media-hub .media-hub-grid,
+#media-hub .media-reel-card,
+#media-hub .media-posts-column {
+    min-width: 0;
+}
+
+#media-hub .media-reel-frame {
+    isolation: isolate;
+}
+
+#media-hub .media-reel-frame iframe {
+    display: block;
+}
+
+#media-hub .media-post-heading {
+    min-width: 0;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+}
+
+@media (max-width: 480px) {
+    .hero-trust-grid {
+        gap: 0.5rem !important;
+    }
+
+    .hero-trust-card {
+        padding: 0.75rem 0.25rem !important;
+    }
+
+    .hero-trust-value {
+        font-size: clamp(1rem, 5.5vw, 1.5rem) !important;
+    }
+
+    #media-hub .media-reel-card {
+        padding: 1rem !important;
+    }
+
+    #media-hub .media-post-heading {
+        font-size: clamp(1.125rem, 5.5vw, 1.5rem) !important;
+    }
 }
 
 @keyframes infiniteScroll {
