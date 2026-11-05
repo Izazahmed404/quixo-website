@@ -91,7 +91,90 @@
             background-size: 200% 100%;
             animation: shimmer 3s infinite;
         }
-    </style>
+    
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
+</style>
 
 <style>
 @media (max-width: 768px) {
@@ -101,6 +184,89 @@
     .hero-section { padding-top: 5rem !important; padding-bottom: 3rem !important; }
     .mobile-stack { flex-direction: column !important; gap: 1rem !important; }
 }
+
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
 </style>
 
 
@@ -124,6 +290,89 @@
     -webkit-text-fill-color: transparent;
     animation: goldLighting 4s ease infinite;
 }
+
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
 </style>
 
 
@@ -135,52 +384,142 @@
 .gold-aura-blink {
     animation: goldAuraBlink 2.5s ease-in-out infinite;
 }
+
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
 </style>
 
 
 
 
+
 <style id="theme-styles">
-/* Flawless Global Light Mode */
+/* ==========================================================
+   ULTRA-LUXURY CHAMPAGNE & ROYAL GOLD LIGHT THEME
+   Inspired by Cartier, Rolex & Apple Luxury Interfaces
+========================================================== */
+
 body.light-mode {
-    background-color: #F8F9FA !important;
-    background-image: none !important;
-    color: #111827 !important;
+    background: linear-gradient(180deg, #FDFCF9 0%, #F5F1E9 50%, #ECE6D9 100%) !important;
+    background-attachment: fixed !important;
+    color: #1A1A1A !important;
 }
 
-/* Force all sections and containers to light background */
+/* Luxury Sections */
 body.light-mode section,
-body.light-mode div,
-body.light-mode main,
-body.light-mode header {
-    background-color: transparent;
-}
-
-body.light-mode,
 body.light-mode section#services,
 body.light-mode section#calculator,
 body.light-mode section#pricing,
-body.light-mode section#testimonials,
-body.light-mode div[class*="bg-black"],
-body.light-mode div[class*="bg-[#000000]"],
-body.light-mode div[class*="bg-[#050505]"],
-body.light-mode div[class*="bg-[#0A0A0A]"],
-body.light-mode section[class*="bg-[#050505]"],
-body.light-mode section[class*="bg-[#0A0A0A]"],
-body.light-mode section[class*="bg-black"] {
-    background-color: #F8F9FA !important;
+body.light-mode section#testimonials {
+    background: transparent !important;
 }
 
-/* Card Styling in Light Mode */
+/* Pearl & Gold Glass Cards */
 body.light-mode .glass-card, 
 body.light-mode .luxury-card,
 body.light-mode div[class*="glass-card"] {
-    background: #FFFFFF !important;
-    border: 1px solid rgba(197, 160, 89, 0.4) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 16px 40px rgba(180, 140, 60, 0.12), 0 2px 6px rgba(0,0,0,0.04) !important;
+    border-radius: 1.5rem !important;
 }
 
-/* Text Colors */
+/* Hover lift effect with glowing gold aura */
+body.light-mode .hover-lift:hover {
+    transform: translateY(-6px) !important;
+    border-color: #C5A059 !important;
+    box-shadow: 0 20px 45px rgba(197, 160, 89, 0.25) !important;
+}
+
+/* Standard Growth (Most Popular) Card in Light Mode */
+body.light-mode div.border-2.border-gold {
+    background: #FFFFFF !important;
+    border: 2.5px solid #C5A059 !important;
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Headings with Rich Onyx Depth */
 body.light-mode h1, 
 body.light-mode h2, 
 body.light-mode h3, 
@@ -188,60 +527,197 @@ body.light-mode h4,
 body.light-mode h5,
 body.light-mode .text-white,
 body.light-mode span.text-white {
-    color: #0F172A !important;
+    color: #111827 !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
+/* Shimmering Metallic Gold Text */
+body.light-mode .gold-lighting-text {
+    background: linear-gradient(135deg, #996515 0%, #D4AF37 40%, #B8860B 80%, #7A4F01 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 2px 4px rgba(184, 134, 11, 0.2)) !important;
+}
+
+/* Subtitles, Descriptions, & Body text */
 body.light-mode p, 
 body.light-mode .text-gray-200, 
 body.light-mode .text-gray-300, 
 body.light-mode .text-gray-400,
 body.light-mode li {
-    color: #334155 !important;
+    color: #374151 !important;
+    font-weight: 500 !important;
 }
 
-/* Calculator & Inputs */
-body.light-mode input {
-    background-color: #FFFFFF !important;
-    color: #0F172A !important;
-    border: 1.5px solid rgba(197, 160, 89, 0.5) !important;
-}
-body.light-mode label {
-    color: #1E293B !important;
-}
-
-/* Testimonial Marquee Edge Gradients */
-body.light-mode .bg-gradient-to-r.from-\[\#050505\] {
-    background: linear-gradient(to right, #F8F9FA, transparent) !important;
-}
-body.light-mode .bg-gradient-to-l.from-\[\#050505\] {
-    background: linear-gradient(to left, #F8F9FA, transparent) !important;
+/* Luxury Champagne Badges */
+body.light-mode span[class*="bg-gold/10"],
+body.light-mode .bg-gold\/10 {
+    background-color: rgba(197, 160, 89, 0.18) !important;
+    color: #8C6212 !important;
+    border: 1px solid rgba(197, 160, 89, 0.5) !important;
+    box-shadow: 0 2px 8px rgba(197, 160, 89, 0.15) !important;
 }
 
-/* Navigation & Footer */
+/* Navigation Bar */
 body.light-mode nav {
-    background: rgba(248, 249, 250, 0.95) !important;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.25) !important;
+    background: rgba(253, 252, 249, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1.5px solid rgba(197, 160, 89, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 body.light-mode nav a {
-    color: #1E293B !important;
+    color: #1F2937 !important;
 }
+body.light-mode nav a:hover {
+    color: #C5A059 !important;
+}
+
+/* Theme Toggle Button in Light Mode */
+body.light-mode #theme-toggle-btn {
+    background: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    color: #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25) !important;
+}
+
+/* Calculator Card & Inputs */
+body.light-mode input {
+    background-color: #FAFAF8 !important;
+    color: #111827 !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.6) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+}
+body.light-mode input:focus {
+    background-color: #FFFFFF !important;
+    border-color: #B8860B !important;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode label {
+    color: #1F2937 !important;
+    font-weight: 700 !important;
+}
+
+/* Calculator Projected Yield Card */
+body.light-mode #calc-yield-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 240, 230, 0.9)) !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.18) !important;
+}
+
+/* Testimonial Edge Mask in Light Mode */
+body.light-mode .bg-gradient-to-r.from-\[\#050505\] {
+    background: linear-gradient(to right, #FDFCF9, transparent) !important;
+}
+body.light-mode .bg-gradient-to-l.from-\[\#050505\] {
+    background: linear-gradient(to left, #FDFCF9, transparent) !important;
+}
+
+/* Luxury Footer in Light Mode */
 body.light-mode footer {
-    background-color: #F1F5F9 !important;
-    border-top: 1px solid rgba(197, 160, 89, 0.3) !important;
+    background: linear-gradient(180deg, #F5F1E9 0%, #EAE4D5 100%) !important;
+    border-top: 2px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03) !important;
 }
 body.light-mode footer p,
 body.light-mode footer span,
 body.light-mode footer a {
-    color: #475569 !important;
+    color: #374151 !important;
+}
+body.light-mode footer a:hover {
+    color: #8C6212 !important;
 }
 
-/* Badges */
-body.light-mode .gold-lighting-text {
-    background: linear-gradient(135deg, #996515 0%, #D4AF37 50%, #996515 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+/* Floating Contact Bar in Light Mode */
+body.light-mode div.bg-black\/90 {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3) !important;
 }
+
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
 </style>
+
 
 
 
@@ -708,7 +1184,90 @@ body.light-mode .gold-lighting-text {
     .animate-infinite-scroll:hover {
         animation-play-state: paused;
     }
-    </style>
+    
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
+</style>
 
     <!-- Testimonials Section with Endless Marquee Carousel -->
     <section id="testimonials" class="py-32 border-t border-[#C5A059]/20 bg-[#050505] overflow-hidden">
@@ -928,6 +1487,89 @@ document.addEventListener("DOMContentLoaded", function() {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+
+/* Fix Progress Bars in Light Mode */
+body.light-mode .bg-zinc-800 {
+    background-color: rgba(197, 160, 89, 0.22) !important;
+}
+
+/* Fix Inner Dashboard Cards */
+body.light-mode .bg-black\/40 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Fix Agency Commitment Card in Footer */
+body.light-mode .bg-black\/60 {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+body.light-mode .bg-black\/60 p {
+    color: #1F2937 !important;
+}
+
+/* Fix Logo Icon Box in Header & Footer */
+body.light-mode .w-10.h-10.rounded-xl.bg-black {
+    background-color: #FFFFFF !important;
+    border: 2px solid #C5A059 !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35) !important;
+}
+
+/* Fix Floating Social Buttons in Light Mode */
+body.light-mode .floating-btn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25) !important;
+}
+body.light-mode .floating-title {
+    color: #111827 !important;
+}
+body.light-mode .floating-subtitle {
+    color: #6B7280 !important;
+}
+
+
+/* ==========================================================
+   AMBIANCE MATCH FOR FLOATING WIDGETS & TOAST NOTIFICATIONS
+========================================================== */
+
+/* Light Mode Ambiance */
+body.light-mode .floating-btn,
+body.light-mode div.fixed a.floating-btn,
+body.light-mode a[href*="facebook.com/QuixoStudio"],
+body.light-mode a[href*="wa.me/8801895681235"] {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 12px 30px rgba(180, 140, 60, 0.18), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .floating-btn p.floating-title,
+body.light-mode div.fixed a p.text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .floating-btn p.floating-subtitle,
+body.light-mode div.fixed a p.text-gray-400 {
+    color: #4B5563 !important;
+}
+
+/* Toast Notification in Light Mode */
+body.light-mode .toast-pill,
+body.light-mode #toast-container div {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D4AF37 !important;
+    color: #0F172A !important;
+    box-shadow: 0 16px 35px rgba(180, 140, 60, 0.22), 0 4px 10px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .toast-pill span,
+body.light-mode #toast-container div span {
+    color: #1E293B !important;
+    font-weight: 800 !important;
+}
+
 </style>
 
 
@@ -995,7 +1637,7 @@ function showToast() {
     
     const msg = toastVariants[Math.floor(Math.random() * toastVariants.length)];
     const toast = document.createElement('div');
-    toast.className = "pointer-events-auto bg-black/95 border-2 border-[#C5A059] text-white px-6 py-4 rounded-2xl shadow-[0_15px_30px_rgba(197,160,89,0.3)] backdrop-blur-2xl flex items-center gap-4 transform -translate-x-full transition-all duration-600 text-xs font-extrabold tracking-wider";
+    toast.className = "toast-pill pointer-events-auto bg-black/95 border-2 border-[#C5A059] text-white px-6 py-4 rounded-2xl shadow-[0_15px_30px_rgba(197,160,89,0.3)] backdrop-blur-2xl flex items-center gap-4 transform -translate-x-full transition-all duration-600 text-xs font-extrabold tracking-wider";
     toast.innerHTML = `<div class="w-3 h-3 rounded-full bg-[#C5A059] animate-ping flex-shrink-0"></div><span class="gold-shine">${msg}</span>`;
     
     container.appendChild(toast);
