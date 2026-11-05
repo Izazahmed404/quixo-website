@@ -1370,6 +1370,19 @@ footer .facebook-channel-link:hover {
     color: #1877F2;
 }
 
+footer .gmail-channel-link {
+    color: #fff;
+}
+
+footer .gmail-channel-link .gmail-brand-icon {
+    color: #EA4335;
+}
+
+footer .gmail-channel-link:hover,
+footer .gmail-channel-link:focus-visible {
+    color: #EA4335;
+}
+
 body.light-mode footer .official-channel-link.official-channel-link {
     background: transparent !important;
     background-color: transparent !important;
@@ -1380,6 +1393,25 @@ body.light-mode footer .official-channel-link.official-channel-link {
 body.light-mode footer .facebook-channel-link:hover,
 body.light-mode footer .facebook-channel-link .facebook-brand-icon {
     color: #1877F2 !important;
+}
+
+body.light-mode footer .official-channel-link.gmail-channel-link {
+    color: #fff !important;
+}
+
+body.light-mode footer .official-channel-link.gmail-channel-link span {
+    color: #fff !important;
+}
+
+body.light-mode footer .official-channel-link.gmail-channel-link:hover,
+body.light-mode footer .official-channel-link.gmail-channel-link:focus-visible,
+body.light-mode footer .gmail-channel-link .gmail-brand-icon {
+    color: #C5221F !important;
+}
+
+body.light-mode footer .official-channel-link.gmail-channel-link:hover span,
+body.light-mode footer .official-channel-link.gmail-channel-link:focus-visible span {
+    color: #C5221F !important;
 }
 
 .facebook-contact {
