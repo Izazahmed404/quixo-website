@@ -126,6 +126,17 @@
 }
 </style>
 
+
+<style>
+@keyframes goldAuraBlink {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.6)); box-shadow: 0 0 15px rgba(197, 160, 89, 0.5); border-color: #C5A059; }
+    50% { filter: drop-shadow(0 0 25px rgba(197, 160, 89, 1)); box-shadow: 0 0 35px rgba(197, 160, 89, 0.9); border-color: #FFF3D6; }
+}
+.gold-aura-blink {
+    animation: goldAuraBlink 2.5s ease-in-out infinite;
+}
+</style>
+
 </head>
 <body class="bg-black text-white antialiased selection:bg-[#C5A059] selection:text-black">
 
@@ -237,31 +248,39 @@
 
 
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-[#C5A059]/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="w-12 h-12 rounded-2xl bg-black border border-[#C5A059]/60 flex items-center justify-center overflow-hidden shadow-xl shadow-[#C5A059]/30 group-hover:scale-105 transition-all">
-                    <img src="assets/logo.png" alt="Quixo Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="text-[#C5A059] font-extrabold text-2xl hidden">Q</span>
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight gold-lighting-text">QUIXO</span>
-                    <span class="block text-[10px] tracking-widest uppercase text-gray-400 font-semibold">Marketing Studio</span>
-                </div>
+    
+    <!-- Navigation Bar with Language Switcher -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-black border-2 border-[#C5A059] flex items-center justify-center gold-aura-blink">
+                <span class="text-[#C5A059] font-black text-xl">Q</span>
             </div>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
-                <a href="#services" class="hover:text-[#C5A059] transition-colors">Services</a>
-                <a href="#calculator" class="hover:text-[#C5A059] transition-colors">ROI Calculator</a>
-                <a href="#pricing" class="hover:text-[#C5A059] transition-colors">Packages</a>
-                <a href="#testimonials" class="hover:text-[#C5A059] transition-colors">Reviews</a>
+            <span class="text-lg font-extrabold gold-lighting-text">Quixo Studio</span>
+        </div>
+        
+        <!-- Center/Right Controls: Language Switcher + Pricing Jump -->
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-black/90 border border-[#C5A059] p-1 rounded-xl shadow-lg">
+                <button onclick="setLang('en')" id="nav-en" class="px-3 py-1 bg-[#C5A059] text-black font-extrabold text-xs rounded-lg transition-all">EN</button>
+                <button onclick="setLang('bn')" id="nav-bn" class="px-3 py-1 text-[#C5A059] font-extrabold text-xs rounded-lg transition-all hover:bg-[#C5A059]/20">বাংলা</button>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/8801895681235" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl gold-gradient-bg text-black font-extrabold text-sm shadow-xl shadow-[#C5A059]/30 hover:scale-105 transition-all">
-                    <span>WhatsApp 01895681235</span>
-                </a>
-            </div>
+            <a href="#pricing" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'}); return false;" class="hidden sm:inline-flex bg-gold text-black font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-all">View Packages</a>
         </div>
     </nav>
+    <script>
+    function setLang(lang) {
+        if(lang === 'bn') {
+            document.getElementById('nav-bn').className = 'px-3 py-1 bg-[#C5A059] text-black font-extrabold text-xs rounded-lg transition-all';
+            document.getElementById('nav-en').className = 'px-3 py-1 text-[#C5A059] font-extrabold text-xs rounded-lg transition-all hover:bg-[#C5A059]/20';
+            alert('বাংলা ভাষা মোড সক্রিয় করা হয়েছে!');
+        } else {
+            document.getElementById('nav-en').className = 'px-3 py-1 bg-[#C5A059] text-black font-extrabold text-xs rounded-lg transition-all';
+            document.getElementById('nav-bn').className = 'px-3 py-1 text-[#C5A059] font-extrabold text-xs rounded-lg transition-all hover:bg-[#C5A059]/20';
+            alert('English mode activated!');
+        }
+    }
+    </script>
+
 
     
     <!-- Background Glowing Orbs & Animated Particles -->
@@ -355,7 +374,7 @@
 
                     <!-- Floating Badge -->
                     <div class="p-4 rounded-2xl gold-gradient-bg text-black font-black text-center text-sm shadow-xl flex items-center justify-center gap-2">
-                        <span>✨ Ready to Scale Your Business?</span>
+                        <span>✨ Ready to Scale Your Business? <span class="ml-2">↓</span></span>
                     </div>
                 </div>
             </div>
@@ -449,6 +468,7 @@
     </section>
 
     
+    
     <script>
     function calculateROI() {
         const price = parseFloat(document.getElementById('calc-price').value) || 0;
@@ -456,7 +476,6 @@
         const delivery = parseFloat(document.getElementById('calc-delivery').value) || 0;
         const budget = parseFloat(document.getElementById('calc-budget').value) || 0;
         
-        // Accurate e-commerce formula: estimated orders based on ad budget (~350 BDT cost per order acquisition)
         const estimatedOrders = Math.round((budget / 350) * 2.5);
         const grossRevenue = estimatedOrders * price;
         const totalCost = budget + (estimatedOrders * (cost + delivery));
@@ -465,12 +484,25 @@
         
         document.getElementById('res-orders').innerText = estimatedOrders.toLocaleString('en-IN') + ' Orders';
         document.getElementById('res-revenue').innerText = '৳' + grossRevenue.toLocaleString('en-IN');
-        document.getElementById('res-profit').innerText = '৳' + netProfit.toLocaleString('en-IN');
+        
+        const profitEl = document.getElementById('res-profit');
+        const lossPopup = document.getElementById('loss-popup');
+        
+        if (netProfit >= 0) {
+            profitEl.innerText = '৳' + netProfit.toLocaleString('en-IN');
+            profitEl.className = 'text-3xl font-black text-emerald-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.6)]';
+            if(lossPopup) lossPopup.classList.add('hidden');
+        } else {
+            profitEl.innerText = '-৳' + Math.abs(netProfit).toLocaleString('en-IN');
+            profitEl.className = 'text-3xl font-black text-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.7)] animate-pulse';
+            if(lossPopup) lossPopup.classList.remove('hidden');
+        }
+        
         document.getElementById('res-roas').innerText = roas + 'x';
     }
-    // Run on load
     window.addEventListener('DOMContentLoaded', calculateROI);
     </script>
+
 
 
     <!-- Pricing / Packages Section -->
@@ -656,33 +688,75 @@
 
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-[#C5A059]/30 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 rounded-2xl bg-black border border-[#C5A059]/50 flex items-center justify-center overflow-hidden gold-aura-blink">
-                        <img src="https://i.ibb.co/5W2mX2R/Quixo-Studio-Gold-Emblem.png" alt="Logo" class="w-full h-full object-cover">
+    
+    <!-- Ultra-Professional Luxury Footer -->
+    <footer class="bg-black border-t-2 border-[#C5A059]/40 py-16 px-6 sm:px-12 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#C5A059]/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <!-- Brand Column -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-black border-2 border-[#C5A059] flex items-center justify-center gold-aura-blink shadow-[0_0_15px_rgba(197,160,89,0.8)]">
+                        <span class="text-[#C5A059] font-black text-xl tracking-tighter">Q</span>
                     </div>
-                    <span class="text-xl font-extrabold gold-lighting-text">Quixo Marketing Studio</span>
+                    <h3 class="text-lg font-extrabold gold-lighting-text whitespace-nowrap">Quixo Marketing Studio</h3>
                 </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    বাংলাদেশের ই-কমার্স ও এফ-কমার্স উদ্যোক্তাদের ব্যবসা বৃদ্ধিতে আমরা দিচ্ছি প্রিমিয়াম ফেসবুক অ্যাডস ক্যাম্পেইন, ভাইরাল রিলস এবং সেলস ফানেল সলিউশন।
+                </p>
+                <div class="flex items-center gap-3 text-xs text-[#C5A059] font-bold">
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span>Active 24/7 Support & Client Hub</span>
+                </div>
+            </div>
 
-            <div>
-                <h4 class="font-extrabold text-white mb-6 text-base tracking-wider uppercase">Social Media</h4>
-                <a href="https://www.facebook.com/QuixoStudio" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-[#0a0a0a] border border-[#C5A059]/40 hover:border-[#C5A059] transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </div>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Facebook Page</p>
-                        <p class="text-white font-extrabold text-sm">Quixo Marketing Studio</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-black text-[#C5A059] uppercase tracking-wider mb-2">Quick Navigation</h4>
+                <a href="#hero" class="text-xs text-gray-400 hover:text-[#C5A059] transition-colors">Home / Welcome</a>
+                <a href="#pricing" class="text-xs text-gray-400 hover:text-[#C5A059] transition-colors">Packages & Pricing (7-Day Trial)</a>
+                <a href="#roi-calculator" class="text-xs text-gray-400 hover:text-[#C5A059] transition-colors">ROI Growth Calculator</a>
+                <a href="#testimonials" class="text-xs text-gray-400 hover:text-[#C5A059] transition-colors">Client Success Stories</a>
+            </div>
+
+            <!-- Official Channels -->
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-black text-[#C5A059] uppercase tracking-wider mb-2">Official Channels</h4>
+                <a href="https://www.facebook.com/QuixoStudio" target="_blank" class="flex items-center gap-2 text-xs text-gray-300 hover:text-[#C5A059] transition-colors">
+                    <svg class="w-4 h-4 text-[#C5A059] fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <span>Facebook: QuixoStudio</span>
                 </a>
+                <a href="https://wa.me/8801895681235?text=Hi%20Quixo%20Team,%20I%20want%20to%20grow%20my%20business." target="_blank" class="flex items-center gap-2 text-xs text-gray-300 hover:text-emerald-400 transition-colors">
+                    <svg class="w-4 h-4 text-emerald-400 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>WhatsApp / Hotline: 01895681235</span>
+                </a>
+                <div class="flex items-center gap-2 text-xs text-gray-300">
+                    <svg class="w-4 h-4 text-[#C5A059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <span class="text-[11px]">quixo.marketing.studio@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- Trust Badge & Hours -->
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-black text-[#C5A059] uppercase tracking-wider mb-2">Agency Commitment</h4>
+                <div class="bg-black/60 border border-[#C5A059]/30 p-4 rounded-2xl flex flex-col gap-2 shadow-xl">
+                    <p class="text-[11px] text-gray-300 font-bold">🔒 Uncompromising Quality & Data Security</p>
+                    <p class="text-[10px] text-gray-400">Trusted by 200+ Bangladeshi entrepreneurs with guaranteed ROAS & 24/7 dedicated support.</p>
+                </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-            &copy; 2026 Quixo Marketing Studio. All rights reserved. Official Email: quixo.marketing.studio@gmail.com
+
+        <!-- Copyright Bottom Bar -->
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-[#C5A059]/20 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <p>© 2026 Quixo Marketing Studio. All rights reserved. Crafted with uncompromising elegance.</p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-[#C5A059] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#C5A059] transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-[#C5A059] transition-colors">Security</a>
+            </div>
         </div>
     </footer>
+
 
     <!-- Floating Social Widgets -->
     <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4 items-end">
@@ -859,6 +933,67 @@ function submitAudit() {
     closeAuditModal();
 }
 </script>
+
+
+    <!-- EN/Bangla Translation Script -->
+    <script>
+    const translations = {
+        en: {
+            heroTitle: "Smart Marketing. Bigger Growth.",
+            heroDesc: "Empowering Bangladeshi E-Commerce & F-Commerce brands with high-converting Facebook ads, viral reels, and elite marketing systems.",
+            trialBtn: "Start 7-Day Free Trial",
+            scaleBtn: "✨ Ready to Scale Your Business? <span class="ml-2">↓</span>",
+            pricingTitle: "Transparent Pricing Plans",
+            calcTitle: "ROI Growth Calculator"
+        },
+        bn: {
+            heroTitle: "স্মার্ট মার্কেটিং। আরও বড় গ্রোথ।",
+            heroDesc: "বাংলাদেশের ই-কমার্স ও এফ-কমার্স ব্র্যান্ডগুলোর জন্য হাই-কনভার্টিং ফেসবুক অ্যাডস, ভাইরাল রিলস এবং প্রিমিয়াম মার্কেটিং সলিউশন।",
+            trialBtn: "৭ দিনের ফ্রি ট্রায়াল শুরু করুন",
+            scaleBtn: "✨ আপনার বিজনেস স্কেল করতে প্রস্তুত?",
+            pricingTitle: "স্বচ্ছ প্যাকেজ ও মূল্যতালিকা",
+            calcTitle: "আরওআই গ্রোথ ক্যালকুলেটর"
+        }
+    };
+
+    function switchLanguage(lang) {
+        const btnEn = document.getElementById('lang-en');
+        const btnBn = document.getElementById('lang-bn');
+        if(lang === 'bn') {
+            if(btnBn) btnBn.className = 'text-xs font-black px-3 py-1.5 rounded-lg bg-[#C5A059] text-black transition-all';
+            if(btnEn) btnEn.className = 'text-xs font-black px-3 py-1.5 rounded-lg text-[#C5A059] hover:bg-[#C5A059]/20 transition-all';
+            localStorage.setItem('quixo_lang', 'bn');
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if(el.dataset.bn) el.innerText = el.dataset.bn;
+            });
+        } else {
+            if(btnEn) btnEn.className = 'text-xs font-black px-3 py-1.5 rounded-lg bg-[#C5A059] text-black transition-all';
+            if(btnBn) btnBn.className = 'text-xs font-black px-3 py-1.5 rounded-lg text-[#C5A059] hover:bg-[#C5A059]/20 transition-all';
+            localStorage.setItem('quixo_lang', 'en');
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if(el.dataset.en) el.innerText = el.dataset.en;
+            });
+        }
+    }
+    </script>
+
+
+    <script>
+    document.addEventListener('click', function(e) {
+        let target = e.target.closest('a, button');
+        if (!target) return;
+        let text = target.innerText.toLowerCase();
+        let href = target.getAttribute('href') || '';
+        
+        if (text.includes('scale') || text.includes('pricing') || text.includes('package') || text.includes('trial') || href.includes('pricing') || href.includes('packages')) {
+            let pricingSec = document.getElementById('pricing') || document.getElementById('packages');
+            if (pricingSec) {
+                e.preventDefault();
+                pricingSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+    </script>
 
 </body>
 </html>
