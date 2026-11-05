@@ -1353,3 +1353,131 @@ body.light-mode .text-emerald-400 {
 body.light-mode .text-red-500 {
     color: #B91C1C !important;
 }
+
+footer .official-channel-link {
+    min-height: 2rem;
+    width: fit-content;
+    max-width: 100%;
+    background: transparent;
+    text-decoration: none;
+}
+
+footer .facebook-channel-link .facebook-brand-icon {
+    color: #1877F2;
+}
+
+footer .facebook-channel-link:hover {
+    color: #1877F2;
+}
+
+body.light-mode footer .official-channel-link.official-channel-link {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #334155 !important;
+}
+
+body.light-mode footer .facebook-channel-link:hover,
+body.light-mode footer .facebook-channel-link .facebook-brand-icon {
+    color: #1877F2 !important;
+}
+
+.facebook-contact {
+    min-height: 3rem;
+    border: 2px solid rgba(24, 119, 242, 0.6);
+    background: rgba(0, 0, 0, 0.9);
+    color: #1877F2;
+}
+
+.facebook-contact:hover {
+    border-color: #1877F2;
+    background: rgba(0, 0, 0, 0.96);
+}
+
+.facebook-contact-icon {
+    background: rgba(24, 119, 242, 0.2);
+    color: #1877F2;
+}
+
+.facebook-contact-label {
+    color: #1877F2;
+}
+
+.facebook-contact-dot {
+    background: #1877F2;
+}
+
+body.light-mode a.facebook-contact {
+    background: rgba(255, 255, 255, 0.96) !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    border-color: rgba(24, 119, 242, 0.6) !important;
+    color: #1877F2 !important;
+    box-shadow: 0 12px 30px rgba(24, 119, 242, 0.28) !important;
+}
+
+body.light-mode a.facebook-contact:hover {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border-color: #1877F2 !important;
+}
+
+body.light-mode .facebook-contact-icon,
+body.light-mode .facebook-contact-label,
+body.light-mode .facebook-contact-dot,
+body.light-mode .facebook-contact .text-white {
+    color: #1877F2 !important;
+}
+
+body.light-mode .facebook-contact .text-white {
+    color: #0F172A !important;
+}
+
+body.light-mode .facebook-contact-dot {
+    background: #1877F2 !important;
+}
+
+.back-to-top-button {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(197, 160, 89, 0.7);
+    border-radius: 9999px;
+    background: rgba(12, 12, 12, 0.94);
+    color: #E2C275;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.back-to-top-button.hidden {
+    display: none !important;
+}
+
+.back-to-top-button:hover {
+    transform: translateY(-2px);
+    background: #C5A059;
+    color: #000000;
+}
+
+.back-to-top-button:focus-visible {
+    outline: 2px solid #E2C275;
+    outline-offset: 3px;
+}
+
+body.light-mode .back-to-top-button {
+    background: rgba(255, 255, 255, 0.96);
+    color: #704900;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .back-to-top-button:hover {
+    background: #C5A059;
+    color: #000000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top-button {
+        transition: none;
+    }
+}

@@ -302,6 +302,23 @@ function toggleTheme() {
             const menuButton = document.getElementById('mobile-menu-toggle');
             const menu = document.getElementById('primary-navigation');
             const menuPath = document.querySelector('#mobile-menu-icon path');
+            const backToTopButton = document.getElementById('back-to-top');
+
+            if (backToTopButton) {
+                const updateBackToTopVisibility = () => {
+                    backToTopButton.classList.toggle('hidden', window.scrollY < 400);
+                };
+
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+                    });
+                });
+
+                window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+                updateBackToTopVisibility();
+            }
 
             if (menuButton && menu && menuPath) {
                 const setMenuOpen = (isOpen) => {
