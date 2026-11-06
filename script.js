@@ -1,19 +1,3 @@
-tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            DEFAULT: '#C5A059',
-                            light: '#E2C275',
-                            dark: '#9A7B38',
-                            accent: '#FFF0B3'
-                        },
-                        obsidian: '#000000'
-                    }
-                }
-            }
-        }
-
 function getPreference(key) {
     try {
         return localStorage.getItem(key);
@@ -190,7 +174,7 @@ function submitAudit() {
         return;
     }
     const message = new URLSearchParams({
-        text: `Hello Quixo, I want to claim my Free Page and Ad Audit. Business: ${biz}. Phone: ${phone}`
+        text: `Hello Quixo, I would like to discuss Facebook Page management for my business. Business: ${biz}. Phone: ${phone}`
     });
     window.open(`https://wa.me/8801895681235?${message}`, '_blank', 'noopener,noreferrer');
     closeAuditModal();
@@ -198,20 +182,20 @@ function submitAudit() {
 
 const translations = {
         en: {
-            heroTitle: "স্মার্ট মার্কেটিং। বড় গ্রোথ।",
-            heroDesc: "Empowering Bangladeshi E-Commerce & F-Commerce brands with high-converting Facebook ads, viral reels, and elite marketing systems.",
-            trialBtn: "Start 7-Day Free Trial",
-            scaleBtn: "✨ আপনার বিজনেস স্কেল করতে প্রস্তুত? ↓",
-            pricingTitle: "Transparent Pricing Plans",
-            calcTitle: "ROI Growth Calculator"
+            heroTitle: "Your Facebook Page. Managed with Purpose.",
+            heroDesc: "Facebook Page setup, content planning, branded posts and reels, community support, and Meta ad management for Bangladeshi businesses.",
+            trialBtn: "Explore Page Management Plans",
+            scaleBtn: "✨ আপনার Facebook Page গুছিয়ে শুরু করুন ↓",
+            pricingTitle: "Facebook Page Management Plans",
+            calcTitle: "Ad Campaign Planning Tool"
         },
         bn: {
-            heroTitle: "স্মার্ট মার্কেটিং। আরও বড় গ্রোথ।",
-            heroDesc: "বাংলাদেশের ই-কমার্স ও এফ-কমার্স ব্র্যান্ডগুলোর জন্য হাই-কনভার্টিং ফেসবুক অ্যাডস, ভাইরাল রিলস এবং প্রিমিয়াম মার্কেটিং সলিউশন।",
-            trialBtn: "৭ দিনের ফ্রি ট্রায়াল শুরু করুন",
-            scaleBtn: "✨ আপনার বিজনেস স্কেল করতে প্রস্তুত?",
-            pricingTitle: "স্বচ্ছ প্যাকেজ ও মূল্যতালিকা",
-            calcTitle: "আরওআই গ্রোথ ক্যালকুলেটর"
+            heroTitle: "আপনার Facebook Page, পরিকল্পিত ব্যবস্থাপনায়",
+            heroDesc: "বাংলাদেশের ব্যবসার জন্য Facebook Page setup, content planning, branded posts and reels, community support এবং Meta ad management।",
+            trialBtn: "পেজ ম্যানেজমেন্ট প্ল্যান দেখুন",
+            scaleBtn: "✨ আপনার Facebook Page গুছিয়ে শুরু করুন",
+            pricingTitle: "Facebook Page Management Plans",
+            calcTitle: "Ad Campaign Planning Tool"
         }
     };
 
@@ -284,14 +268,25 @@ function toggleTheme() {
                 const viewportHeight = window.innerHeight;
                 const originX = ((bounds.left + bounds.width / 2) / viewportWidth) * 100;
                 const originY = ((bounds.top + bounds.height / 2) / viewportHeight) * 100;
+                const isSwitchingToDark = body.classList.contains('light-mode');
 
                 document.documentElement.style.setProperty('--theme-origin-x', `${originX}%`);
                 document.documentElement.style.setProperty('--theme-origin-y', `${originY}%`);
+                document.documentElement.dataset.themeTransitionDirection = isSwitchingToDark ? 'reverse' : 'forward';
+                document.documentElement.style.setProperty(
+                    '--theme-transition-easing',
+                    isSwitchingToDark ? 'cubic-bezier(0.25, 1, 0.5, 1)' : 'cubic-bezier(0.65, 0, 0.9, 0.65)'
+                );
                 applyTheme();
             });
             return;
         }
 
+        const isSwitchingToDark = body.classList.contains('light-mode');
+        document.documentElement.style.setProperty(
+            '--theme-transition-easing',
+            isSwitchingToDark ? 'cubic-bezier(0.25, 1, 0.5, 1)' : 'cubic-bezier(0.65, 0, 0.9, 0.65)'
+        );
         body.classList.add('theme-transitioning');
         applyTheme();
         window.setTimeout(() => body.classList.remove('theme-transitioning'), 800);

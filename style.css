@@ -362,6 +362,17 @@ body.light-mode #toast-container div span {
     }
 }
 
+@keyframes theme-glass-reverse {
+    from {
+        clip-path: circle(180vmax at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
+        filter: blur(0) saturate(1);
+    }
+    to {
+        clip-path: circle(0 at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
+        filter: blur(12px) saturate(1.25);
+    }
+}
+
 @supports (view-transition-name: root) {
     @media (prefers-reduced-motion: no-preference) {
         ::view-transition-old(root) {
@@ -370,7 +381,17 @@ body.light-mode #toast-container div span {
 
         ::view-transition-new(root) {
             z-index: 2;
-            animation: theme-glass-reveal 800ms cubic-bezier(0.65, 0, 0.9, 0.65) both;
+            animation: theme-glass-reveal 800ms var(--theme-transition-easing, cubic-bezier(0.65, 0, 0.9, 0.65)) both;
+        }
+
+        :root[data-theme-transition-direction="reverse"]::view-transition-old(root) {
+            z-index: 2;
+            animation: theme-glass-reverse 800ms var(--theme-transition-easing, cubic-bezier(0.25, 1, 0.5, 1)) both;
+        }
+
+        :root[data-theme-transition-direction="reverse"]::view-transition-new(root) {
+            z-index: 1;
+            animation: none;
         }
     }
 }
@@ -380,7 +401,7 @@ body.light-mode #toast-container div span {
     body.theme-transitioning * {
         transition-property: background-color, color, border-color, box-shadow, fill, stroke;
         transition-duration: 800ms;
-        transition-timing-function: cubic-bezier(0.65, 0, 0.9, 0.65);
+        transition-timing-function: var(--theme-transition-easing, cubic-bezier(0.65, 0, 0.9, 0.65));
     }
 }
 
@@ -1374,12 +1395,11 @@ footer .gmail-channel-link {
     color: #fff;
 }
 
-footer .gmail-channel-link .gmail-brand-icon {
+footer .gmail-brand-icon {
     color: #EA4335;
 }
 
-footer .gmail-channel-link:hover,
-footer .gmail-channel-link:focus-visible {
+footer .gmail-channel-link:hover {
     color: #EA4335;
 }
 
@@ -1395,22 +1415,28 @@ body.light-mode footer .facebook-channel-link .facebook-brand-icon {
     color: #1877F2 !important;
 }
 
+body.light-mode footer .facebook-channel-link:hover span {
+    color: #1877F2 !important;
+}
+
+body.light-mode footer .official-channel-link:not(.facebook-channel-link):not(.gmail-channel-link):hover,
+body.light-mode footer .official-channel-link:not(.facebook-channel-link):not(.gmail-channel-link):hover span {
+    color: #047857 !important;
+}
+
 body.light-mode footer .official-channel-link.gmail-channel-link {
-    color: #fff !important;
+    color: #000 !important;
 }
 
-body.light-mode footer .official-channel-link.gmail-channel-link span {
-    color: #fff !important;
+body.light-mode footer .official-channel-link.gmail-channel-link:hover {
+    color: #EA4335 !important;
 }
 
-body.light-mode footer .official-channel-link.gmail-channel-link:hover,
-body.light-mode footer .official-channel-link.gmail-channel-link:focus-visible,
+body.light-mode footer .official-channel-link.gmail-channel-link:hover span {
+    color: #EA4335 !important;
+}
+
 body.light-mode footer .gmail-channel-link .gmail-brand-icon {
-    color: #C5221F !important;
-}
-
-body.light-mode footer .official-channel-link.gmail-channel-link:hover span,
-body.light-mode footer .official-channel-link.gmail-channel-link:focus-visible span {
     color: #C5221F !important;
 }
 
